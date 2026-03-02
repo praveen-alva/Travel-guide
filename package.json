@@ -1,23 +1,23 @@
 {
   "name": "travel-guide",
   "private": true,
-  "version": "0.0.0",
+  "version": "1.0.0",
+  "homepage": "https://praveen-alva.github.io/Travel-guide",
   "type": "module",
   "scripts": {
-    "generate-sitemap": "node scripts/generate-sitemap.js",
     "dev": "vite",
     "build": "npm run generate-sitemap && vite build",
+    "preview": "vite preview",
     "lint": "eslint .",
-    "preview": "vite preview"
+    "generate-sitemap": "node scripts/generate-sitemap.js",
+    "predeploy": "npm run build",
+    "deploy": "gh-pages -d dist"
   },
   "dependencies": {
     "@fontsource/dm-sans": "^5.2.8",
     "@fontsource/playfair-display": "^5.2.8",
-    "@tailwindcss/postcss": "^4.1.18",
     "leaflet": "^1.9.4",
     "leaflet.markercluster": "^1.5.3",
-    "postcss": "^8.5.6",
-    "prop-types": "^15.8.1",
     "react": "^18.3.1",
     "react-dom": "^18.3.1",
     "react-helmet-async": "^2.0.5",
@@ -28,6 +28,7 @@
   },
   "devDependencies": {
     "@eslint/js": "^9.39.1",
+    "@tailwindcss/postcss": "^4.1.18",
     "@tailwindcss/vite": "^4.1.18",
     "@types/react": "^19.2.5",
     "@types/react-dom": "^19.2.3",
@@ -35,7 +36,9 @@
     "eslint": "^9.39.1",
     "eslint-plugin-react-hooks": "^7.0.1",
     "eslint-plugin-react-refresh": "^0.4.24",
+    "gh-pages": "^6.3.0",
     "globals": "^16.5.0",
+    "postcss": "^8.5.6",
     "tailwindcss": "^4.1.18",
     "vite": "^7.2.4"
   }
