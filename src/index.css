@@ -1,0 +1,73 @@
+@import "tailwindcss";
+
+html {
+  scrollbar-gutter: stable;
+}
+
+@theme {
+  --animate-fade-in-up: fadeInUp 1s ease-out forwards;
+  
+  @keyframes fadeInUp {
+    from {
+      opacity: 0;
+      transform: translateY(30px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+}
+
+/* Custom Utilities if needed */
+.text-stroke {
+  -webkit-text-stroke: 1px rgba(255,255,255,0.3);
+}
+
+/* Override Browser Autofill Styles */
+input:-webkit-autofill,
+input:-webkit-autofill:hover, 
+input:-webkit-autofill:focus, 
+input:-webkit-autofill:active {
+    -webkit-box-shadow: 0 0 0 30px white inset !important;
+    -webkit-text-fill-color: inherit !important;
+    transition: background-color 5000s ease-in-out 0s;
+}
+
+/* MAP MARKERS & POPUPS */
+.marker-pin-container {
+  width: 100%;
+  height: 100%;
+  background-size: cover;
+  background-position: center;
+  border-radius: 50%;
+  border: 3px solid white;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.4);
+  background-color: white;
+  transition: transform 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+/* Hover effect handled by Leaflet via class selection or just native hover if possible */
+.custom-marker-icon:hover .marker-pin-container {
+   transform: scale(1.2) translateY(-5px);
+   box-shadow: 0 10px 15px rgba(0,0,0,0.3);
+   border-color: #0d9488; /* Teal-600 */
+}
+
+/* Remove default Leaflet popup styling to allow custom card */
+.custom-popup .leaflet-popup-content-wrapper {
+  background: transparent !important;
+  box-shadow: none !important;
+  padding: 0 !important;
+  border-radius: 0 !important;
+}
+
+.custom-popup .leaflet-popup-content {
+  margin: 0 !important;
+  width: auto !important;
+}
+
+.custom-popup .leaflet-popup-tip {
+  background: white;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.4);
+}
